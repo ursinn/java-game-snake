@@ -25,8 +25,8 @@
 
 package dev.ursinn.game.snake.clocks;
 
-import dev.ursinn.game.snake.actions.Collision;
 import dev.ursinn.game.snake.Main;
+import dev.ursinn.game.snake.actions.Collision;
 
 public class GameClock extends Thread {
 
