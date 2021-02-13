@@ -25,6 +25,7 @@
 
 package dev.ursinn.game.snake.actions;
 
+import dev.ursinn.game.snake.Main;
 import dev.ursinn.game.snake.game.Direction;
 
 import java.awt.event.KeyEvent;

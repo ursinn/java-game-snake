@@ -25,6 +25,8 @@
 
 package dev.ursinn.game.snake.actions;
 
+import dev.ursinn.game.snake.Main;
+
 public class Collision {
 
     public static boolean collideSelf() {

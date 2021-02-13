@@ -23,7 +23,7 @@
  *
  */
 
-package dev.ursinn.game.snake.actions;
+package dev.ursinn.game.snake;
 
 import dev.ursinn.game.snake.clocks.GameClock;
 import dev.ursinn.game.snake.game.Snake;

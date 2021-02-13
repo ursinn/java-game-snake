@@ -25,7 +25,7 @@
 
 package dev.ursinn.game.snake.gui;
 
-import dev.ursinn.game.snake.actions.Main;
+import dev.ursinn.game.snake.Main;
 import dev.ursinn.game.snake.game.Snake;
 
 import javax.swing.*;
