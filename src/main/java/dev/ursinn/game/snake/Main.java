@@ -28,9 +28,11 @@ package dev.ursinn.game.snake;
 import dev.ursinn.game.snake.clocks.GameClock;
 import dev.ursinn.game.snake.game.Snake;
 import dev.ursinn.game.snake.gui.Gui;
+import lombok.Getter;
 
 public class Main {
 
+    @Getter
     private static Snake snake;
 
     public static void main(String[] args) {
@@ -40,9 +42,5 @@ public class Main {
 
         gui.create();
         gameClock.start();
-    }
-
-    public static Snake getSnake() {
-        return snake;
     }
 }

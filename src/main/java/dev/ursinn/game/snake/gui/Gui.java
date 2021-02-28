@@ -30,22 +30,23 @@ import dev.ursinn.game.snake.actions.KeyHandler;
 import javax.swing.*;
 
 public class Gui {
-    public static int width = 800, height = 600;
-    public static int xOff = 130, yOff = 20;
-    private JFrame jFrame;
-    private Draw draw;
+
+    public static final int WIDTH = 800;
+    public static final int HEIGHT = 600;
+    public static final int X_OFF = 130;
+    public static final int Y_OFF = 20;
 
     public void create() {
-        jFrame = new JFrame("Snake");
-        jFrame.setSize(width, height);
+        JFrame jFrame = new JFrame("Snake");
+        jFrame.setSize(WIDTH, HEIGHT);
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jFrame.setLocationRelativeTo(null);
         jFrame.setLayout(null);
         jFrame.setResizable(false);
         jFrame.addKeyListener(new KeyHandler());
 
-        draw = new Draw();
-        draw.setBounds(0, 0, width, height);
+        Draw draw = new Draw();
+        draw.setBounds(0, 0, WIDTH, HEIGHT);
         draw.setVisible(true);
         jFrame.add(draw);
 

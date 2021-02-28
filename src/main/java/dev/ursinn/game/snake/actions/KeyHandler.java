@@ -42,30 +42,30 @@ public class KeyHandler implements KeyListener {
         switch (e.getKeyCode()) {
             case KeyEvent.VK_W:
             case KeyEvent.VK_UP:
-                if (!(Main.getSnake().head.getDirection() == Direction.DOWN) && !Main.getSnake().waitToMove) {
-                    Main.getSnake().head.setDirection(Direction.UP);
-                    Main.getSnake().waitToMove = true;
+                if (Main.getSnake().getHead().getDirection() != Direction.DOWN && !Main.getSnake().isWaitToMove()) {
+                    Main.getSnake().getHead().setDirection(Direction.UP);
+                    Main.getSnake().setWaitToMove(true);
                 }
                 break;
             case KeyEvent.VK_A:
             case KeyEvent.VK_LEFT:
-                if (!(Main.getSnake().head.getDirection() == Direction.RIGHT) && !Main.getSnake().waitToMove) {
-                    Main.getSnake().head.setDirection(Direction.LEFT);
-                    Main.getSnake().waitToMove = true;
+                if (Main.getSnake().getHead().getDirection() != Direction.RIGHT && !Main.getSnake().isWaitToMove()) {
+                    Main.getSnake().getHead().setDirection(Direction.LEFT);
+                    Main.getSnake().setWaitToMove(true);
                 }
                 break;
             case KeyEvent.VK_S:
             case KeyEvent.VK_DOWN:
-                if (!(Main.getSnake().head.getDirection() == Direction.UP) && !Main.getSnake().waitToMove) {
-                    Main.getSnake().head.setDirection(Direction.DOWN);
-                    Main.getSnake().waitToMove = true;
+                if (Main.getSnake().getHead().getDirection() != Direction.UP && !Main.getSnake().isWaitToMove()) {
+                    Main.getSnake().getHead().setDirection(Direction.DOWN);
+                    Main.getSnake().setWaitToMove(true);
                 }
                 break;
             case KeyEvent.VK_D:
             case KeyEvent.VK_RIGHT:
-                if (!(Main.getSnake().head.getDirection() == Direction.LEFT) && !Main.getSnake().waitToMove) {
-                    Main.getSnake().head.setDirection(Direction.RIGHT);
-                    Main.getSnake().waitToMove = true;
+                if (Main.getSnake().getHead().getDirection() != Direction.LEFT && !Main.getSnake().isWaitToMove()) {
+                    Main.getSnake().getHead().setDirection(Direction.RIGHT);
+                    Main.getSnake().setWaitToMove(true);
                 }
                 break;
         }

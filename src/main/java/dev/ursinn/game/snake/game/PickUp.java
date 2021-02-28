@@ -25,11 +25,20 @@
 
 package dev.ursinn.game.snake.game;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.concurrent.ThreadLocalRandom;
 
 public class PickUp {
 
-    private int x, y;
+    @Getter
+    @Setter
+    private int x;
+
+    @Getter
+    @Setter
+    private int y;
 
     public PickUp() {
         this.x = ThreadLocalRandom.current().nextInt(0, 15);
@@ -39,21 +48,5 @@ public class PickUp {
     public void reset() {
         this.x = ThreadLocalRandom.current().nextInt(0, 15);
         this.y = ThreadLocalRandom.current().nextInt(0, 15);
-    }
-
-    public int getX() {
-        return x;
-    }
-
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-    public void setY(int y) {
-        this.y = y;
     }
 }

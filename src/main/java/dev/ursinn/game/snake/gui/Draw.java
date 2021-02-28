@@ -33,8 +33,6 @@ import java.awt.*;
 
 public class Draw extends JLabel {
 
-    private Point point;
-
     @Override
     protected void paintComponent(Graphics graphics) {
         super.paintComponent(graphics);
@@ -43,41 +41,42 @@ public class Draw extends JLabel {
 
         // Draw Background
         graphics.setColor(Color.LIGHT_GRAY);
-        graphics.fillRect(0, 0, Gui.width, Gui.height);
+        graphics.fillRect(0, 0, Gui.WIDTH, Gui.HEIGHT);
 
         // Draw Snake Tails
         graphics.setColor(new Color(50, 200, 50));
-        for (int i = 0; i < Main.getSnake().tails.size(); i++) {
-            point = Snake.ptc(Main.getSnake().tails.get(i).getX(), Main.getSnake().tails.get(i).getY());
+        Point point;
+        for (int i = 0; i < Main.getSnake().getTails().size(); i++) {
+            point = Snake.ptc(Main.getSnake().getTails().get(i).getX(), Main.getSnake().getTails().get(i).getY());
             graphics.fillRect(point.x, point.y, 32, 32);
         }
 
         // Draw Snake Head
         graphics.setColor(new Color(0, 150, 0));
-        point = Snake.ptc(Main.getSnake().head.getX(), Main.getSnake().head.getY());
+        point = Snake.ptc(Main.getSnake().getHead().getX(), Main.getSnake().getHead().getY());
         graphics.fillRect(point.x, point.y, 32, 32);
 
         // Draw PickUp
         graphics.setColor(new Color(200, 50, 0));
-        point = Snake.ptc(Main.getSnake().pickUp.getX(), Main.getSnake().pickUp.getY());
+        point = Snake.ptc(Main.getSnake().getPickUp().getX(), Main.getSnake().getPickUp().getY());
         graphics.fillRect(point.x, point.y, 32, 32);
 
         // Draw Grid
         graphics.setColor(Color.GRAY);
         for (int i = 0; i < 16; i++) {
             for (int j = 0; j < 16; j++) {
-                graphics.drawRect(i * 32 + Gui.xOff, j * 32 + Gui.yOff, 32, 32);
+                graphics.drawRect(i * 32 + Gui.X_OFF, j * 32 + Gui.Y_OFF, 32, 32);
             }
         }
 
         // Draw Border
         graphics.setColor(Color.BLACK);
-        graphics.drawRect(Gui.xOff, Gui.yOff, 512, 512);
+        graphics.drawRect(Gui.X_OFF, Gui.Y_OFF, 512, 512);
 
         // Draw Score
         graphics.setFont(new Font("Arial", Font.BOLD, 20));
-        graphics.drawString("Score: " + Main.getSnake().score, 5, 25);
-        graphics.drawString("Best: " + Main.getSnake().bestScore, 655, 25);
+        graphics.drawString("Score: " + Main.getSnake().getScore(), 5, 25);
+        graphics.drawString("Best: " + Main.getSnake().getBestScore(), 655, 25);
 
         repaint();
     }

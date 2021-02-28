@@ -26,33 +26,47 @@
 package dev.ursinn.game.snake.game;
 
 import dev.ursinn.game.snake.gui.Gui;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Snake {
 
-    public int score = 0, bestScore = 0;
+    @Getter
+    @Setter
+    private int score = 0;
 
-    public boolean waitToMove = false;
+    @Getter
+    @Setter
+    private int bestScore = 0;
 
-    public Head head = new Head(7, 7);
+    @Getter
+    @Setter
+    private boolean waitToMove = false;
 
-    public ArrayList<Tail> tails = new ArrayList<>();
+    @Getter
+    private final Head head = new Head(7, 7);
 
-    public PickUp pickUp = new PickUp();
+    @Getter
+    private final List<Tail> tails = new ArrayList<>();
+
+    @Getter
+    private final PickUp pickUp = new PickUp();
 
     // Position to Coordinates
     public static Point ptc(int x, int y) {
         Point p = new Point(0, 0);
-        p.x = x * 32 + Gui.xOff;
-        p.y = y * 32 + Gui.yOff;
+        p.x = x * 32 + Gui.X_OFF;
+        p.y = y * 32 + Gui.Y_OFF;
 
         return p;
     }
 
     public void addTail() {
-        if (tails.size() == 0) {
+        if (tails.isEmpty()) {
             tails.add(new Tail(head.getX(), head.getY()));
         } else {
             tails.add(new Tail(tails.get(tails.size() - 1).getX(), tails.get(tails.size() - 1).getY()));

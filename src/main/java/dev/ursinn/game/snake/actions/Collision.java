@@ -29,25 +29,30 @@ import dev.ursinn.game.snake.Main;
 
 public class Collision {
 
+    private Collision() {
+        throw new IllegalStateException("Utility class");
+    }
+
     public static boolean collideSelf() {
-        for (int i = 0; i < Main.getSnake().tails.size(); i++) {
-            if (Main.getSnake().head.getX() == Main.getSnake().tails.get(i).getX() && Main.getSnake().head.getY() == Main.getSnake().tails.get(i).getY() && !Main.getSnake().tails.get(i).isWait())
+        for (int i = 0; i < Main.getSnake().getTails().size(); i++) {
+            if (Main.getSnake().getHead().getX() == Main.getSnake().getTails().get(i).getX() && Main.getSnake().getHead().getY() == Main.getSnake().getTails().get(i).getY() && !Main.getSnake().getTails().get(i).isWait())
                 return true;
         }
         return false;
     }
 
     public static boolean collideWall() {
-        return (Main.getSnake().head.getX() < 0 || Main.getSnake().head.getX() > 15 || Main.getSnake().head.getY() < 0 || Main.getSnake().head.getY() > 15);
+        return (Main.getSnake().getHead().getX() < 0 || Main.getSnake().getHead().getX() > 15 || Main.getSnake().getHead().getY() < 0 || Main.getSnake().getHead().getY() > 15);
     }
 
     public static void collidePickUp() {
-        if (Main.getSnake().head.getX() == Main.getSnake().pickUp.getX() && Main.getSnake().head.getY() == Main.getSnake().pickUp.getY()) {
-            Main.getSnake().pickUp.reset();
+        if (Main.getSnake().getHead().getX() == Main.getSnake().getPickUp().getX() && Main.getSnake().getHead().getY() == Main.getSnake().getPickUp().getY()) {
+            Main.getSnake().getPickUp().reset();
             Main.getSnake().addTail();
-            Main.getSnake().score += 1;
-            if (Main.getSnake().score > Main.getSnake().bestScore)
-                Main.getSnake().bestScore = Main.getSnake().score;
+            Main.getSnake().setScore(Main.getSnake().getScore() + 1);
+            if (Main.getSnake().getScore() > Main.getSnake().getBestScore()) {
+                Main.getSnake().setBestScore(Main.getSnake().getScore());
+            }
         }
     }
 }

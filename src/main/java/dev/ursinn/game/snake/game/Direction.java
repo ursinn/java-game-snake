@@ -27,6 +27,8 @@ package dev.ursinn.game.snake.game;
 
 public enum Direction {
 
-    UP, LEFT, RIGHT, DOWN
-
+    UP,
+    LEFT,
+    RIGHT,
+    DOWN
 }

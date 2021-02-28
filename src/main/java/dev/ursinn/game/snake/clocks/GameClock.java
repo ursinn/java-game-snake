@@ -30,26 +30,27 @@ import dev.ursinn.game.snake.actions.Collision;
 
 public class GameClock extends Thread {
 
-    public static boolean running = true;
-
+    @Override
     public void run() {
+        boolean running = true;
         while (running) {
             try {
                 sleep(200);
                 Main.getSnake().move();
-                Main.getSnake().waitToMove = false;
+                Main.getSnake().setWaitToMove(false);
                 Collision.collidePickUp();
                 if (Collision.collideSelf()) {
-                    Main.getSnake().tails.clear();
-                    Main.getSnake().score = 0;
+                    Main.getSnake().getTails().clear();
+                    Main.getSnake().setScore(0);
                 }
                 if (Collision.collideWall()) {
-                    Main.getSnake().tails.clear();
-                    Main.getSnake().head.setX(7);
-                    Main.getSnake().head.setY(7);
-                    Main.getSnake().score = 0;
+                    Main.getSnake().getTails().clear();
+                    Main.getSnake().getHead().setX(7);
+                    Main.getSnake().getHead().setY(7);
+                    Main.getSnake().setScore(0);
                 }
             } catch (InterruptedException e) {
+                running = false;
                 e.printStackTrace();
             }
         }
