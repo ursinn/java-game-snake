@@ -8,13 +8,7 @@
 [![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/ursinn/java-game-snake?logo=snyk&style=for-the-badge)](https://snyk.io/test/github/ursinn/java-game-snake)
 [![License](https://img.shields.io/github/license/ursinn/java-game-snake?style=for-the-badge)](https://github.com/ursinn/java-game-snake/blob/main/LICENSE)
 
----
-
-## Description
-
 Java Game Snake
-
----
 
 ## License
 
