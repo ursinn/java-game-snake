@@ -38,7 +38,7 @@ public class Gui {
     public void create() {
         JFrame jFrame = new JFrame("Snake");
         jFrame.setSize(WIDTH, HEIGHT);
-        jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        jFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         jFrame.setLocationRelativeTo(null);
         jFrame.setLayout(null);
         jFrame.setResizable(false);

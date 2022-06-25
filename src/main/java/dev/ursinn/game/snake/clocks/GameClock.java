@@ -51,6 +51,7 @@ public class GameClock extends Thread {
             } catch (InterruptedException e) {
                 running = false;
                 e.printStackTrace();
+                Thread.currentThread().interrupt();
             }
         }
     }

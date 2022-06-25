@@ -34,43 +34,43 @@ public class KeyHandler implements KeyListener {
 
     @Override
     public void keyTyped(KeyEvent e) {
+        //
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
         switch (e.getKeyCode()) {
-            case KeyEvent.VK_W:
-            case KeyEvent.VK_UP:
+            case KeyEvent.VK_W, KeyEvent.VK_UP:
                 if (Main.getSnake().getHead().getDirection() != Direction.DOWN && !Main.getSnake().isWaitToMove()) {
                     Main.getSnake().getHead().setDirection(Direction.UP);
                     Main.getSnake().setWaitToMove(true);
                 }
                 break;
-            case KeyEvent.VK_A:
-            case KeyEvent.VK_LEFT:
+            case KeyEvent.VK_A, KeyEvent.VK_LEFT:
                 if (Main.getSnake().getHead().getDirection() != Direction.RIGHT && !Main.getSnake().isWaitToMove()) {
                     Main.getSnake().getHead().setDirection(Direction.LEFT);
                     Main.getSnake().setWaitToMove(true);
                 }
                 break;
-            case KeyEvent.VK_S:
-            case KeyEvent.VK_DOWN:
+            case KeyEvent.VK_S, KeyEvent.VK_DOWN:
                 if (Main.getSnake().getHead().getDirection() != Direction.UP && !Main.getSnake().isWaitToMove()) {
                     Main.getSnake().getHead().setDirection(Direction.DOWN);
                     Main.getSnake().setWaitToMove(true);
                 }
                 break;
-            case KeyEvent.VK_D:
-            case KeyEvent.VK_RIGHT:
+            case KeyEvent.VK_D, KeyEvent.VK_RIGHT:
                 if (Main.getSnake().getHead().getDirection() != Direction.LEFT && !Main.getSnake().isWaitToMove()) {
                     Main.getSnake().getHead().setDirection(Direction.RIGHT);
                     Main.getSnake().setWaitToMove(true);
                 }
+                break;
+            default:
                 break;
         }
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
+        //
     }
 }

@@ -86,7 +86,7 @@ public class Snake {
         }
 
         // Move First Tail to Head
-        if (tails.size() >= 1) {
+        if (!tails.isEmpty()) {
             if (tails.get(0).isWait()) {
                 tails.get(0).setWait(false);
             } else {
@@ -97,18 +97,10 @@ public class Snake {
 
         // Move Head
         switch (head.getDirection()) {
-            case UP:
-                head.setY(head.getY() - 1);
-                break;
-            case DOWN:
-                head.setY(head.getY() + 1);
-                break;
-            case LEFT:
-                head.setX(head.getX() - 1);
-                break;
-            case RIGHT:
-                head.setX(head.getX() + 1);
-                break;
+            case UP -> head.setY(head.getY() - 1);
+            case DOWN -> head.setY(head.getY() + 1);
+            case LEFT -> head.setX(head.getX() - 1);
+            case RIGHT -> head.setX(head.getX() + 1);
         }
     }
 }
